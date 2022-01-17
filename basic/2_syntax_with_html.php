@@ -5,6 +5,7 @@
         <?= 'Hello World' ?>
     </h1>
     <p>My first paragraph</p>
+    <input type="number" name="" id="">
     <?php 
         // Comment type 1 
         # Comment type 2 

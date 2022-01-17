@@ -6,7 +6,7 @@
 $x = null;
 
 // is_null
-echo is_null($x);
+echo is_null($x).'<br>';
 
 // null convert to other
 echo 'To int '.var_dump((int)$x).'<br>';

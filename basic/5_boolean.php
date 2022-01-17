@@ -7,7 +7,7 @@ $isComplete = true;
 # integers 0 , -0 <-> false
 # float 0.0, -0.0 <-> false
 # string ''       <-> false
-# array  []       -> false
+# array  []       -> false, false - > array [false]
 # null            <-> false
 
 
@@ -25,7 +25,7 @@ echo (string) !$isComplete; // this is how echo convert boolean -> ''
 echo ' is FALSE convert String <br>';
 
 // So this also work true 
-$isComplete = 'false'
+$isComplete = 'false';
 
 if($isComplete){
     // do something
