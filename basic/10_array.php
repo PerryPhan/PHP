@@ -71,21 +71,65 @@ $programingLanguages = [
 ];
 echo $programingLanguages['php']['versions'][0]['releaseDate'];
 // echo $programingLanguages['php']['versions'][3]['releaseDate']; // If don't have that index, it will warning. 
+echo '<br>';
+echo '<br>';
 
-// Null can be key 
+// Null can be key
+echo 'Null can also be key, when it work when declare this :';
 $array = [true => 'a', 1 => 'b', '1' => 'c', 1.8 => 'd', null => 'e'];
-
 print_r($array);
 echo '<br>';
 
+echo 'The value of $array[null]: ' ;
 echo $array[null]; # e
+echo '<br>';
+
+echo "If string and int key in array can be convert to same int index like this [1 => 'b', '1' => 'c', 1.8 => 'd'], it will be replace with the last value : ";
+$array = [1 => 'b', '1' => 'c', 1.8 => 'd'];
+print_r($array);
 echo '<br>';
 echo '<br>';
 
 //  Index might not be continual
+echo "It is possible when declare index as u like ['a', 'b', 50 => 'c', 'd', 'e'] : ";
 $array = ['a', 'b', 50 => 'c', 'd', 'e'];
+print_r($array); # 51 => .., 'd', 52 => 'e'
+echo '<br>';
+echo '<br>';
 
-print_r($array);
-// Array functions 
+// Way to delete array's item but can keep the index 
+echo "2 Way to delete array's item but can keep the index : 1. unset , 2. array_shift <br>";
+echo 'Unset delete item but keep the index, do unset($array[50], $array[1]); <br>';
+unset($array[50], $array[1]); 
+print_r($array); # 0 => 'a', 51 => 'd', 52 => 'e'
+echo '<br>';
+echo '<br>';
+
+// So when append it, index will begin at index after deleted
+echo 'So when u unset all value, and append new value, index value will be continuous <br>';
+$array = [1, 2, 3];
+unset($array[0], $array[1], $array[2]); 
+$array[] = 1; 
+print_r($array); # 3 => 1  
+echo '<br>';
+echo '<br>';
+
+echo 'array_shift delete, get first item and rearrange allthe index, do array_shift($array); <br>';
+$array = ['a', 'b', 50 => 'c', 'd', 'e'];
+$a = array_shift($array);
+print "$a <br>";
+print_r($array); # 0 => 'b', 1 => 'c', 2 => 'd', 3 => 'e'
+echo '<br>';
+echo '<br>';
+
+
+// How to know that key is exist : two ways ( but a little different in use )
+$array = ['a'=> 1, 'b'=> null ];
+var_dump(array_key_exists('a',$array)); # bool(true)
+var_dump(isset($array['a'])); # bool(true)
+// But 
+var_dump(array_key_exists('b',$array)); # bool(true) - it only requires the key existed.
+var_dump(isset($array['b'])); # bool(false) - it will require the key existed and not null.  
+
 echo '<br>';
 echo '<br>';
