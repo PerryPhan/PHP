@@ -178,16 +178,101 @@ echo 'about && : it will find first false part, stop there and return false <br>
 echo 'about || : it will find first true part ,stop there and return true <br>';
 $x = true;
 $y = false;
+echo '<br>';
 
 echo 'If we have a function that echo hello named hello() and $x = true <br>';
 function hello(){
     echo 'Hello';
     return false;
 }
+echo '<br>';
+
 echo 'var_dump($x || hello()) : ';
-var_dump($x || hello());# hello() will never be called if $x = true;
+var_dump($x || hello()); # hello() will never be called if $x = true;
 echo '<br>';
 echo 'var_dump(!$x && hello()) : ';
-var_dump(!$x && hello());# hello() will never be called if $x = true;
+var_dump(!$x && hello());
+echo '<br>';
+echo 'var_dump($x && hello() || true) : ';
+var_dump($x && hello() || true);
+echo '<br>';
+echo '<br>';
+
+echo 'about and or xor : Careful to use because of its hierarchy <br>';
+echo 'Do $z = $x and hello() then $z = $x will be do first because it has more precedence (ưu tiên) than and false: ';
+$z = $x and false;
+echo $z;
+echo '<br>';
+echo '<br>';
+
+// Bitwise Operators (& | ^ ~ << >>)
+echo 'Bitwise Operators (& | ^ ~ << >>) : $x = 6, $y = 3 <br>';
+$x = 6; # 110
+$y = 3; # 011
+echo 'var_dump($x & $y) : ';
+var_dump($x & $y);
+echo '<br>';
+echo 'var_dump($x | $y) : ';
+var_dump($x | $y);
+echo '<br>';
+echo 'var_dump($x ^ $y) - xor : ';
+var_dump($x ^ $y); # diffrent -> 1; same -> 0
+echo '<br>';
+echo 'var_dump(~$x) - filp the bit: ';
+var_dump(~$x);
+echo '<br>';
+echo 'var_dump( $x >> 1 ) - shift right the bit to 1 - divide 1 time by 2: ';
+var_dump($x >> 1); #3
+echo '<br>';
+echo 'var_dump( $x << 1 ) - shift left the bit to 1 - multiple 1 time by 2: ';
+var_dump($x << 1); #12
+echo '<br>';
+echo '<br>';
+
+// Array Operators (+ == === !== <> !===)
+echo 'Array Operators (+ == === !== <> !===) :<br>';
+$x = ['a', 'b', 'c'];
+$y = ['d', 'e', 'f']; 
+$z = $x + $y;
+echo '$x: <br>';
+print_r($x);
+echo '<br>';
+echo '$y: <br>';
+print_r($y);
+echo '<br>';
+echo 'Plus (+) mean union, it only append item that has key differnt then the first one : <br>';
+echo '$z = $x + $y <br>';
+print_r($z);
+echo '<br>';
+$x = ['a' => 1, 'b' => 2, 'c' => 3];
+$y = ['d' => 4, 'e' => 5, 'f' => 6]; 
+$z = $x + $y;
+echo '$x: <br>';
+print_r($x);
+echo '<br>';
+echo '$y: <br>';
+print_r($y);
+echo '<br>';
+echo '$z = $x + $y <br>';
+print_r($z);
+echo '<br>';
+echo '<br>';
+
+echo 'about == : it is only true when both key and value match each other, do not care whether string can be numeric or not in right order, they were count <br>'; 
+$x = ['a' => 1, 'b' => 2, 'c' => 3];
+$y = ['a' => 1,  'c' => 3, 'b' => '2']; 
+$z = $x + $y;
+echo '$x: <br>';
+print_r($x);
+echo '<br>';
+echo '$y: <br>';
+print_r($y);
+echo '<br>';
+echo 'var_dump($x == $y): ';
+var_dump($x == $y);
+echo '<br>';
+echo 'about === : strict mode, both loose condition above not approved <br>'; 
+echo 'var_dump($x === $y): ';
+var_dump($x === $y);
 echo '<br>';
 
