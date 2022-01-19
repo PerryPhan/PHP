@@ -260,7 +260,7 @@ echo '<br>';
 
 echo 'about == : it is only true when both key and value match each other, do not care whether string can be numeric or not in right order, they were count <br>'; 
 $x = ['a' => 1, 'b' => 2, 'c' => 3];
-$y = ['a' => 1,  'c' => 3, 'b' => '2']; 
+$y = ['a' => 1, 'c' => 3, 'b' => '2']; 
 $z = $x + $y;
 echo '$x: <br>';
 print_r($x);
@@ -275,4 +275,13 @@ echo 'about === : strict mode, both loose condition above not approved <br>';
 echo 'var_dump($x === $y): ';
 var_dump($x === $y);
 echo '<br>';
+echo '<br>';
 
+/* Operator Precedence & Associativity */
+echo 'Operator Precedence & Associativity  <br>'; 
+echo 'Group by precedence called Associativity due to https://www.php.net/manual/en/language.operators.precedence.php <br>'; 
+echo 'Sort by precedence top down <br>';
+$x = (5 + 3) *5; 
+echo $x; 
+echo '<br>';
+echo '<br>';
