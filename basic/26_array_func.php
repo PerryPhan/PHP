@@ -187,8 +187,8 @@ if ( in_array('a',$array) ){
     echo 'Letter found';
 }
 
-// array_search(mixed $needle, array $haystack, bool $strict = false): int|string|false
-echo 'array_search(mixed $needle, array $haystack, bool $strict = false): int|string|false
+// array_diff(array ...$arrays): array
+echo 'array_diff(array ...$arrays): array
 <pre>
 $array1 = [\'a\'=>1,\'b\'=>2,\'c\'=>3,\'d\'=>4,\'e\'=>5];
 $array2 = [\'f\'=>4,\'g\'=>5,\'i\'=>6,\'j\'=>7,\'k\'=>8];
