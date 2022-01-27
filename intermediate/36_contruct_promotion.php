@@ -102,6 +102,6 @@ echo \'Without null case : \'.$transaction->getCustomer()?->setPaymentProfile( d
 // The pro of this is :
 // That is doSomethingLong may cost so expensive, if getCustomer() does return value, that function will be called 
 ');
-echo $transaction->getCustomer()?->setPaymentProfile(doSomethingLong())?->id ?? 'Null case'; echo '<br>';
-echo 'Without null case : '.$transaction->getCustomer()?->setPaymentProfile(doSomethingLong())?->id;
+// echo $transaction->getCustomer()?->setPaymentProfile(doSomethingLong())?->id ?? 'Null case'; echo '<br>';
+// echo 'Without null case : '.$transaction->getCustomer()?->setPaymentProfile(doSomethingLong())?->id;
 
