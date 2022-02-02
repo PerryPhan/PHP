@@ -3,8 +3,10 @@
 namespace PaymentGateway\Paddle;
 
 class Transaction{
+
     public function __construct()
     {
+        # 37_namespace.php - Uncomment to test it ---------------------------------------
         echo ' <br> <b> Contruct in PaymentGateway\Paddle\Transaction </b> <br>';
         echo ' new CustomerProfile() : ';
         var_dump( new CustomerProfile() ); # require_once in the index
@@ -36,7 +38,11 @@ class Transaction{
         // If CustomerProfile not require_once in index or in this file -> error 
         // If it does not have namespace, begin with '\' for glocal namespace, this apply to global class ( like \Datetime() )
         // Classes which have the same name but not namespace can be two seperated classes 
+    
+    
     }
+
+    # 37_namespace.php - Uncomment to test it ---
     public function explode($seperator, $string){
         echo 'Foo';
     }
