@@ -69,10 +69,10 @@ class TransactionFull
 {
     private ?Customer $customer = null;
     public function __construct(
-        private float $amount,
-        private ?string $description
+        private float $amount ,
+        private ?string $description = 'Test nullable'
     ) {
-
+        echo $this->description;
     }
 
     /**
@@ -84,7 +84,7 @@ class TransactionFull
     }
 
 }
-$transaction = new TransactionFull(5, 'Test nullable');
+$transaction = new TransactionFull(5);
 // This nullable will help preventing error which null Object call function.
 // echo $transaction->customer->paymentProfile->id; # Error because customer value is null, can not calling paymentProfile
 // echo $transaction->customer?->paymentProfile?->id; # echo null

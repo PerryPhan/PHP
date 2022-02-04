@@ -7,6 +7,9 @@
 function print_pre($text){
     echo "<pre>$text</pre>";
 }
+function two_br(){
+    echo '<br><br>';
+}
 /**
  * This is overview 
  */

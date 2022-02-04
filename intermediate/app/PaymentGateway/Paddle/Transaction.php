@@ -6,18 +6,24 @@ use App\Enums\Status as Status;
 
 class Transaction{
     
+    private static int $count = 0;
+
     // Prehaps we have private var status 
     private string $status;
 
     public function __construct()
     {
-        echo 'var_dump(self::STATUS_PAID) from construct : ';
-        var_dump(Status::PAID);
-        echo '<br>';   
+        // # 39 Uncomment to test this file -----------------------------------------
+        // echo 'var_dump(self::STATUS_PAID) from construct : ';
+        // var_dump(Status::PAID);
+        // echo '<br>';   
 
-        echo 'set Status to Pending : $this->setStatus(self::STATUS_PENDING); ';
-        $this->setStatus(Status::PENDING);
-        echo '<br>';
+        // echo 'set Status to Pending : $this->setStatus(self::STATUS_PENDING); ';
+        // $this->setStatus(Status::PENDING);
+        // echo '<br>';
+
+        # 40 Uncomment to test this -------------------------------------------------
+        self::$count++;
     }
     
     
@@ -36,8 +42,16 @@ class Transaction{
     /**
      * Get the value of status
      */ 
-    public function getStatus()
+    public function getStatus() : string
     {
         return $this->status;
+    }
+
+    /**
+     * Get the value of count
+     */ 
+    public static function getCount(): int
+    {
+        return self::$count;
     }
 }
