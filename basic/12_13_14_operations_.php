@@ -206,20 +206,20 @@ echo '<br>';
 echo '<br>';
 
 // Bitwise Operators (& | ^ ~ << >>)
-echo 'Bitwise Operators (& | ^ ~ << >>) : $x = 6, $y = 3 <br>';
 $x = 6; # 110
 $y = 3; # 011
+echo 'Bitwise Operators (& | ^ ~ << >>) : $x = 6 '.decbin($x).', $y = 3 '.decbin($y).'<br>';
 echo 'var_dump($x & $y) : ';
-var_dump($x & $y);
+var_dump($x & $y, decbin($x & $y));
 echo '<br>';
 echo 'var_dump($x | $y) : ';
-var_dump($x | $y);
+var_dump($x | $y, decbin($x | $y));
 echo '<br>';
 echo 'var_dump($x ^ $y) - xor : ';
-var_dump($x ^ $y); # diffrent -> 1; same -> 0
+var_dump($x ^ $y, decbin($x ^ $y)); # diffrent -> 1; same -> 0
 echo '<br>';
 echo 'var_dump(~$x) - filp the bit: ';
-var_dump(~$x);
+var_dump(~$x, decbin(~$x));
 echo '<br>';
 echo 'var_dump( $x >> 1 ) - shift right the bit to 1 - divide 1 time by 2: ';
 var_dump($x >> 1); #3
